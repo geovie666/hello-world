@@ -15,10 +15,11 @@ func Pic(dx, dy int) [][]uint8 {
 
 	for i:=0;i<dx;i++{
 		for j:=0;j<dy;j++{
-			a[i][j]=180
-			c:=float64(math.Pow(float64(128-i),2)+math.Pow(float64(j-128),2))
+			c:=float64(math.Pow(float64(dx/2-i),2)+math.Pow(float64(j-dy/2),2))
 			if math.Sqrt(c)<80{
 				a[i][j]=0
+			} else {
+				a[i][j]=180
 			}
 		}
 	}
